@@ -12,43 +12,34 @@ public class FeetMetersConversions {
 
     public static void main(String[] args) {
         /* Method summary:
-           1. Display header
-           2. Create conversionTable to hold table values
+           1. Define & Display header
+           2. Create conversionTable
            3. Populate conversionTable using conversion methods
            4. Display formatted contents of conversionTable
         */
 
-        // Column headers and divider (44 characters per row from assignment image)
+        // 1. Define & display header (44 characters per row from assignment image)
         final String HEADER = "Feet    Meters              Meters      Feet";
         final String DIVIDER = "--------------------------------------------";
-
-        // Display table header (44 characters per row from assignment image)
         System.out.println(HEADER);
         System.out.println(DIVIDER);
 
-        // Define matrix dimensions, start and increment values
+        // 2. Create ConversionTable to hold calculated values
         final int ROWS = 10;
         final int COLS = 4;
-        final double FEET_START = 1.0;
-        final double FEET_STEP = 1.0;
-        final double METERS_START = 20.0;
-        final double METERS_STEP = 5.0;
-
-
-        // Declare conversionTable to hold the values
         double [][] conversionTable = new double[ROWS][COLS];
 
-        // 3) Populate the conversionTable with a loop
+        // 3. Populate the conversionTable with a loop using footToMeter and meterToFoot methods
         for (int r = 0; r < ROWS; r++) {
-            double feet   = FEET_START + FEET_STEP * r;   // 1.0 to 10.0 by 1.0
-            double meters = METERS_START + METERS_STEP * r;   // 20.0 to 65.0 by 5.0
+            double feet = 1 + r;  // 1.0 to 10.0 by 1.0
+            double meters = 20.0 + (5.0 * r); // 20.0 to 65.0 by 5.0
             conversionTable[r][0] = feet;
             conversionTable[r][1] = footToMeter(feet);
             conversionTable[r][2] = meters;
             conversionTable[r][3] = meterToFoot(meters);
         }
 
-        // Display the table using a looping printf
+        // 4. Display the table using a looping printf
         for (int r = 0; r < ROWS; r++) {
             System.out.printf(
                     "%4.1f" +  // Feet: ends at col 3 (width 4)
