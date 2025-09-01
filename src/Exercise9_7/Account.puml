@@ -1,0 +1,21 @@
+@startuml
+class Account {
+- id: int
+- balance: double
+- annualInterestRate: double
+- dateCreated: Date
++ Account()
++ Account(id: int, balance: double)
++ getId(): int
++ getBalance(): double
++ getAnnualInterestRate(): double
++ getDateCreated(): Date
++ setID(id: int): void
++ setAnnualInterestRate(annualInterestRate: double): void
++ getMonthlyInterestRate(): double
++ getMonthlyInterest(): double
++ withdraw(amount: double): void
++ deposit(amount: double): void
+}
+
+@enduml
